@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vídeo HTML5 con subtítulos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: Lexend, sans-serif; font-size: 16px; margin: 0; padding: 1.5rem; background-color: #e4f3c7; color: #222; }
+        main { max-width: 800px; margin: 0 auto; }
+        h1 { text-align: center; font-size: 2rem; color: #222; }
+        video { display: block; width: 100%; max-width: 640px; height: auto; margin: 1rem auto; }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Vídeo HTML5 y subtítulos</h1>
+        <!-- WCAG 1.2.2: el vídeo pregrabado con audio necesita subtítulos sincronizados. -->
+        <section aria-label="Vídeo Friday">
+            <video controls preload="metadata">
+                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4" type="video/mp4">
+                <!-- WCAG 1.2.2: pista de subtítulos en inglés; la ruta es relativa a ejercicio3.html. -->
+                <track label="English" kind="captions" srclang="en" src="./subtitles/friday.vtt" default>
+                Tu navegador no admite la reproducción de vídeo HTML5.
+            </video>
+            <!-- Instrucción para localizar los subtítulos desde los controles del reproductor. -->
+            <p>Selecciona los subtítulos desde los controles del reproductor si no aparecen automáticamente.</p>
+        </section>
+    </main>
+</body>
+</html>
